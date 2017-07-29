@@ -9,7 +9,7 @@ var path = require('path');
 var async = require('async');
 var socketio = require('socket.io');
 var express = require('express');
-var Rapid = require('socket-io');
+var Rapid = require('rapid-io');
 
 
 //
