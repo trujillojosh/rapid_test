@@ -1,0 +1,172 @@
+body
+{
+    background-image: url("../img/background.jpg");
+    background-size: contain;
+}
+*
+{
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    font-family: monospace, sans-serif;
+}
+
+.title
+{
+    text-align: center;
+    color: white;
+}
+
+.modal
+{
+  position: fixed;
+/*  text-align: center; */
+  z-index: 3; /* Sit on top */
+  left: 50%;
+  top: 50%;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.4);
+}
+
+.modal-content
+{
+  padding: 70px 0;
+  text-align: center;
+  max-width: 660px;
+  font-family: 'indie flower';
+  font-size: 1.5em;
+  color: #e3e3e3;  
+  background: #3c5d4b;
+  border: 5px solid #0c331e;
+    
+}
+
+#newSticky
+{
+
+/*  position: fixed;*/
+/*  text-align: center;*/
+  z-index: 3; /* Sit on top */
+/*  left: 0;*/
+/*  top: 0;*/
+  /*width: 20%;*/
+  /*height: 20%;*/
+/*  background-color: rgba(0,0,0,0.4);*/
+/*  margin: 130px auto;*/
+  /*padding: 20px;*/
+/*   position: relative; */
+  /*max-width: 440px;*/
+/*  font-family: 'indie flower';*/
+/*  font-size: 1.5em;*/
+/*  color: #e3e3e3;  */
+/*  background: #3c5d4b;*/
+/*  border: 5px solid #0c331e;*/
+    
+    
+/*    position: absolute;*/
+/*    left: 25%;*/
+/*    top: 25%;*/
+/*    right: 25%;*/
+/*    margin-left: -150px;
+    margin-top: -150px;*/
+/*    text-align: center;*/
+/*    width: 85%;*/
+}
+
+.textTitle
+{
+    width: 80%;
+}
+
+.textBody
+{
+    width: 80%;
+    height: 100%;
+}
+
+#corkboard
+{
+    display: flex;
+    flex-direction: row;
+    margin: auto;
+    width: 95%;
+    height: 100%; /*800px;*/
+    background-color: green;
+    border: 1.5vw solid brown;
+    padding: 1%;
+    -webkit-justify-content: center;
+	justify-content: center;
+}
+
+.flex-container
+{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    /*-ms-box-orient: horizontal;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -moz-flex;
+    display: -webkit-flex;*/
+    display: flex;
+}
+
+.corkboard-menu
+{
+    display: flex;
+    width: 100%;
+    -webkit-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    text-align: center;
+    -webkit-justify-content: center;
+	justify-content: center;
+}
+
+.corkboard-item
+{
+    background: magenta;
+    padding: 5px;
+    width: 100px;
+    height: 100px;
+    margin: 10px;
+    line-height: 100px;
+    color: white;
+    font-weight: bold;
+    font-size: 2em;
+    text-align: center;
+}
+
+.check
+{
+    /*visibility: hidden;*/
+}
+
+.sticky
+{
+    display: flex;
+    width: 100%;
+    -webkit-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    text-align: center;
+    -webkit-justify-content: center;
+	justify-content: center;
+}
+
+.stickyTitle
+{
+    font-size: 1em;
+    text-align: center;
+}
+
+.stickyBody
+{
+    padding-top: 1em;
+    overflow: auto;
+}
+
+.open_ticket{
+  /*  padding-right: 30%; */
+    float: right;
+}

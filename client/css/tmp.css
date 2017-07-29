@@ -1,0 +1,161 @@
+body
+{
+	text-align: center;
+	background-color: #505050;
+}
+
+* 
+{
+	-webkit-box-sizing: border-box;
+	   -moz-box-sizing: border-box;
+	   		box-sizing: border-box;
+
+}
+
+.doft_cont
+{
+	display: flex;
+	flex-direction: row;
+	-webkit-justify-content: center;
+	justify-content: center;
+}
+
+.cont_header
+{
+	display: flex;
+	flex-direction: row;
+	width: 80%;
+	height: 8vw;
+	background-color: #909090;
+	border-radius: 5px;
+	box-shadow: 10px 10px 10px black;
+}
+
+.cont_left
+{
+	display: flex;
+	position: relative;
+	flex-direction: column;
+	width: 10%;
+	height: 33vw;
+	right: 1.5vw;
+	background-color: #B8B8B8;
+	border-radius: 5px;
+	box-shadow: 10px 10px 10px black;
+	padding: 1.5vw;
+	-webkit-justify-content: center;
+	justify-content: center;
+}
+
+.cont_center
+{
+	display: flex;
+	flex-direction: column;
+	width: 55%;
+	height: 45vw;
+	background-color: #B8B8B8;
+	border-radius: 5px;
+	box-shadow: 10px 10px 10px black;
+	-webkit-justify-content: center;
+	justify-content: center;
+}
+
+.cont_right
+{
+	display: flex;
+	position: relative;
+	flex-direction: column;
+	width: 10%;
+	height: 33vw;
+	left: 1.5vw;
+	background-color: #B8B8B8;
+	border-radius: 5px;
+	box-shadow: 10px 10px 10px black;
+	padding-top: 1vw;
+}
+
+.cont_greenbox
+{
+	background-color: #99ff99;
+	position: relative;
+	top: -8vw;
+	left: 8vw;
+	width: 40vw;
+}
+
+.item_doft
+{
+	height: 90%;
+	padding: 0.5vw;
+}
+
+.item_loupe
+{
+	position: relative;
+	top: 1.8vw;
+	left: 36vw;
+	height: 90%;
+}
+
+.item_reload
+{
+	position: relative;
+	align-self: flex-start;
+	top: 0.5vw;
+	left: 35.5vw;
+}
+
+.item_close
+{
+	position: relative;
+	align-self: flex-end;
+	left: 36.5vw;
+}
+
+.item_oeil
+{
+	border: 5px solid red;
+	border-radius: 5px;
+}
+
+.item_brick
+{
+	line-height: 0;
+	letter-spacing: -5px;
+	text-align: center;
+}
+
+.test
+{
+	width: 500px;
+	margin: 20px auto;
+	padding: 50px;
+	border-width: 10px;
+}
+
+.relative
+{
+	position: relative;
+	top: -20px;
+	left: 20px;
+	background-color: green;
+	width: 500px;
+}
+
+.fixed
+{
+	position: fixed;
+	bottom: 0;
+	right: 0;
+	width: 200px;
+	background-color: yellow;
+}
+
+.absolute
+{
+	position: absolute;
+	top: 120px;
+	right: 0;
+	width: 300px;
+	height: 200px;
+}

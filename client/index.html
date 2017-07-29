@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en" ng-app>
+  <head>
+    <title>Fast Task</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/bootstrap-responsive.min.css">
+    <link rel="stylesheet" href="/css/cork.css">
+    <script>
+      function ChatController($scope) {
+        var socket = io.connect();
+
+        $scope.messages = [];
+        $scope.roster = [];
+        $scope.name = '';
+        $scope.text = '';
+
+        socket.on('connect', function () {
+          $scope.setName();
+        });
+
+        socket.on('message', function (msg) {
+          $scope.messages.push(msg);
+          $scope.$apply();
+        });
+
+        socket.on('roster', function (names) {
+          $scope.roster = names;
+          $scope.$apply();
+        });
+
+        $scope.send = function send() {
+          console.log('Sending message:', $scope.text);
+          socket.emit('message', $scope.text);
+          $scope.text = '';
+        };
+
+        $scope.setName = function setName() {
+          socket.emit('identify', $scope.name);
+        };
+      }
+    </script>
+  </head>
+  <body>
+    <!-- <div class="page-header"><h1 class="title">Fast Task</h1></div> -->
+    <div class="modal" id='newSticky'>
+      <form class="modal-content" onSubmit="sticky_create()">
+        <h3>Add new ticket</h3>
+        <table>
+          <input class="textTitle" type="text" name="textTitle" value="Title"><br>
+            <textarea class="textBody" type="text" type="textarea" name="textBody" value="Body">
+            </textarea>
+        </table>
+        <input type='submit' value='Submit'>
+      </form>
+    </div>
+  <div id="corkboard">
+    <ul class="flex-container corkboard-menu">
+      <li class="corkboard-item">TODO</li>
+      <li class="corkboard-item">LOG</li>
+    </ul>
+    <ul class="flex-container sticky">
+      <li class="sticky-post">
+        <div class="stickyTitle">Min</div>
+        <div class="stickyBody">awesome</div>
+        <form class ="check" onclick="javascript:check_done();">
+          <input type="checkbox" name="done" value="bool">Done<br>
+        </form>
+      </li>
+      <li class="sticky-post">
+        <div class="stickyTitle">League</div>
+        <div class="stickyBody">the best</div>
+        <form class ="check" action="javascript:check_done();">
+          <input type="checkbox" name="done" value="bool"> Done<br>
+        </form>
+      </li>
+      <li class="sticky-post">
+        <div class="stickyTitle">overwatch</div>
+        <div class="stickyBody">gud game</div>
+        <form class ="check" action="javascript:check_done();">
+          <input type="checkbox" name="done" value="bool"> Done<br>
+        </form>
+      </li>
+    <!--<button type="button" class="open_ticket" data-toggle="modal" data-target="#newSticky">Open Ticket</button>-->
+    </ul>
+    </div>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/angular.min.js"></script>
+    <script src="/js/new.js"></script>
+    <script src="/js/index.js"></script>
+  </body>
+</html>
