@@ -1,4 +1,4 @@
-const client = Rapid.createClient('NDA1OWE0MWo1b3AzYXBmLnJhcGlkLmlv')
+const client = Rapid.createClient('')
 
 
 console.log("index.js loaded");
@@ -8,7 +8,7 @@ $("#newStickyBtn").click(function (){
 });
 
 client
-  .collection('notes-2')
+  .collection('notes-3')
   .subscribe((messages, changes) => {
     changes.added.forEach(message => {
         // console.log(message.body.title);
@@ -26,6 +26,7 @@ client
   });
   
 $("body").click(function() {
+// $(document).ready(function () {
 $('.stickyItem').click(function() {
     var x = this.childNodes[0].innerHTML;
     var y = this.childNodes[1].innerHTML;
@@ -56,6 +57,7 @@ $('.stickyItem').click(function() {
               .mutate({ text: $('#input').val() })
                 $('#input').val('')
     }});
+           // $(".stickyChat").children().remove();
     const temp = client
     .collection(this.id)
     .subscribe((messages, changes) => {
@@ -63,7 +65,9 @@ $('.stickyItem').click(function() {
             console.log(message.body.text);
             $('.stickyChat').append($('<div>').text(message.body.text))
     });});
+    
     $('#stickyExit').click(function () {
+        // $(".stickyChat").children().remove();
         $('#current_sticky').addClass("hidden");
         temp.unsubscribe();
  });
@@ -144,7 +148,7 @@ function  sticky_create() {
     console.log($('#textB').val());
     console.log('shit not broken');
     client
-        .collection('notes-2')
+        .collection('notes-3')
         .newDocument()
         .mutate({
             title: $('#textT').val(),

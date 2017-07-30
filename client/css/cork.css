@@ -1,6 +1,6 @@
 body
 {
-/*    background-image: url("/img/woodpaper.jpg"); */ 
+    background-image: url("/img/woodpaper.jpg"); 
     background-size: contain;
 }
 h1 {
@@ -73,7 +73,7 @@ h1 {
     min-width: 600px;
     height: 80vh;
     min-height: 900px;
- /*   background-image: url("/img/chalkboard.jpg"); */
+    background-image: url("/img/chalkboard.jpg"); 
     background-size: contain;
 }
 
