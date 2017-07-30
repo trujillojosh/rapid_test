@@ -1,4 +1,4 @@
-const client = Rapid.createClient('')
+const client = Rapid.createClient('NDA1OWE0MWo1b3AzYXBmLnJhcGlkLmlv')
 
 
 console.log("index.js loaded");
