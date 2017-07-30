@@ -3,15 +3,9 @@ const client = Rapid.createClient('NDA1OWE0MWo1b3AzYXBmLnJhcGlkLmlv')
 
 console.log("index.js loaded");
 
-
 $("#newStickyBtn").click(function (){
     $("#openFade").toggleClass("hidden");
-})
-
-$(".expandBtn").click(function () {
-    console.log("clicked dicky dicks");
-    console.log(this.parent.id);
-})
+});
 
 client
   .collection('notes-2')
@@ -21,37 +15,127 @@ client
          $('#todo').append('<div class="stickyItem" id=' + message.id + '>' +
         '<div class="stickyTitle">' + message.body.title + '</div>' + 
         '<div class="stickyBody">' + message.body.body + '</div>' +
-        '<button class="expandBtn">Expand</button>' + '</BR>' +
-        '<input type="checkbox" class="box" name="done" value="bool">' + 'Done' +
+//        '<input type="checkbox" id="doneBox" name="done" value="bool">' + 'Done' +
         '</div>');
-         $('#log').append('<div class="stickyItem" id=' + message.id + '>' +
-        '<div class="stickyTitle">' + message.body.title + '</div>' + 
-        '<div class="stickyBody">' + message.body.body + '</div>' +
-        '<button class="expandBtn">Expand</button>' + '</BR>' +
-        '<input type="checkbox" class="box" name="done" value="bool">' + 'Done' +
-        '</div>');
-    // $('#fuckingWork').append($('<div>')).message.body.title;
-    //  $('#fuckingWork').append('<span>' + message.body.title + '</span>');
-    //  //$('#fuckingWork').append($('<div>')).message.body.title;
-     
-    //   $('#fuckingWork').append($('<div>')).text("should work");
-    //   $('#fuckingWork').prepend($('<div>')).html("after work");
-    //   $('#fuckingWork').append($('<div>')).html("last fucking thing");
+        //  $('#log').append('<div class="stickyItem" id=' + message.id + '>' +
+        // '<div class="stickyTitle">' + message.body.title + '</div>' + 
+        // '<div class="stickyBody">' + message.body.body + '</div>' +
+//        '<input type="checkbox" id="doneBox" name="done" value="Done">' + 'done' + 
+        // '</div>');
+    });
+  });
+  
+$("body").click(function() {
+$('.stickyItem').click(function() {
+    var x = this.childNodes[0].innerHTML;
+    var y = this.childNodes[1].innerHTML;
+    $("#current_sticky").toggleClass("hidden");
+    console.log(x);
+    console.log(y);
+    $(".stickyDeetsTitle").remove();
+    $(".stickyDeetsBody").remove();
+    $(".stickyChat").remove();
+    $("#stickyExit").remove();
+    $(".doneBox").remove();
+    $("#input").remove();
+    $("#current_sticky").append(
+    '<div class="stickyDeetsTitle">' + x + '</div>' +
+    '<button id="stickyExit">' + '</button>' +
+    '<div class="stickyDeetsBody">' + y + '</div>' +
+    '<div class="stickyChat">' + '</div>' +
+    '<div class="doneBox">' +
+    '<form class="check" id="checker">' + '<input type="checkBox" name="done" value="bool">' + ' DONE' + '</form>' +
+    '<form class="check" id="checker">' + '<input type="checkBox" name="del" value="bool">' + ' DEL' + '</form>' + '</div>' +
+    '<input type="text" id="input" placeholder="Type message..." />'
+    );
+    $('#input').keyup(e => {
+        if (e.which === 13) {
+            client
+              .collection(this.id)
+              .newDocument()
+              .mutate({ text: $('#input').val() })
+                $('#input').val('')
+    }});
+    const temp = client
+    .collection(this.id)
+    .subscribe((messages, changes) => {
+        changes.added.forEach(message => {
+            console.log(message.body.text);
+            $('.stickyChat').append($('<div>').text(message.body.text))
+    });});
+    $('#stickyExit').click(function () {
+        $('#current_sticky').addClass("hidden");
+        temp.unsubscribe();
+ });
+});
+});
 
-    })
-  })
+
+// function    populateChat(input) {
+//     client
+//         .collection('Bk6rypcLZ')
+//         .newDocument()
+//         .mutate({ text: input})
+// }
+
+
+// $("body").click(function () {
+//     $(".stickyItem").click(function () {
+//         console.log(this.id);
+//         $("#current_sticky").toggleClass("hidden");
+        
+//         // var temp = this.childNodes[0].text();
+//       // console.log(this);
+//         // populate left side info
+        
+//         // console.log(this.childNodes[0].innerHTML);
+//         // console.log(this.childNodes[1].innerHTML);
+        
+//         // $('#stickyDeetsTitle').text(this.childNodes[0].innerHTML);
+//         // $('#stickyDeetsBody').text(this.childNodes[1].innerHTML);
+        
+//         // <div class="stickyDeetsTitle"></div>
+//         // <div class="stickyDeetsBody"></div>
+//         // <div class="stickyChat"></div>
+//         // <div class="doneBox">
+//         // <form class ="check" id="checker">
+//         // <input type="checkbox" name="done" value="bool">
+//         // </form>DONE<BR>
+//         // </div>
+// });});
+
+
+// populate right side chatbox
+// cl1ient
+// .collection(this.id)
+//  .subscribe((messages, changes) => {
+// changes.added.forEach(message => {
+// console.log("clicked dicky dicks");
+// console.log(messages.id);
+// console.log($(this).parent.message.id);
+// })
+// })
+// })
+// })
+
+function    openMenu(menuName) {
+    if (menuName == 1) {
+        var x = document.getElementById('log');
+        x.style.display = "none";
+        var y = document.getElementById('todo');
+        y.style.display = "";
+    }
+    else if (menuName == 2) {
+        var x = document.getElementById('todo');
+        x.style.display = "none";
+        var y = document.getElementById('log');
+        y.style.display = "";
+    }
+}
+
 // $("#submitBtn").click(function () {
 //     console.log("fucking clicks");
 //     $("input[type='text']").value = "blahs";
-// })
-
-
-// function that hides the stickies after it has been marked done
-// $(".box").click(function () {
-//     console.log("hiding done sticky");
-//      $(this).hide();
-    ;
-
 // })
 
 function  sticky_create() {
@@ -66,7 +150,7 @@ function  sticky_create() {
             title: $('#textT').val(),
             status: false,
             body: $('#textB').val()
-        })
+        });
     $("#textT").val("Title");
     $("#textB").val("Message");
 }

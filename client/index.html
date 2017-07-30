@@ -9,13 +9,12 @@
      <script src="https://unpkg.com/rapid-io/dist/rapid.umd.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   </head>
-  
-  <body>
-    <div class="page-header">
-      <button id="newStickyBtn" type="button" class="btn btn-info">Open Ticket</button> 
-      <h1 class="title">Fast Task</h1>
+
+    <div class="header">
+      <button id="newStickyBtn" type="button" class="btn btn-info">Open Ticket</button>
+      <h1 class="Title">Fast Task</h1>
     </div>
-    
+  <body>  
 <!-- ADD NEW TICKET MODAL -->    
     
     <div class="modal hidden" id="openFade" role="dialog">
@@ -30,58 +29,24 @@
       </form>
     </div>
     
-<!-- STICKY NOTES MODAL -->
-
-    <div class="modal hidden">
-      <div class="modal-content stickyModal">
-      	<div class="stickyTitle">
-      	  Title
-      	</div>
-      	<div class="stickyDeets">
-      		<span class="stickyDeetsName">
-      		  David is gay\n Justin is gay\n
-      		</span><br><br>
-      		<span class="stickyDeetsTime">
-      		  12:00PM
-      		</span><br><br><br>
-      		<span class="stickyDeetsDeets">
-      		  Fridge is broken, fix it pls.
-      		</span><br>
-      	</div>
-      	<div class="stickyChat">
-      	</div>
-      	<form class ="check" id="checker">
-             <input type="checkbox" name="done" value="bool">Done<br>
-           </form>
-       </div>
-    </div>
-
 <!-- CORKBOARD -->
 
     <div id="corkboard">
       <div class="menu">
-        <button class="btn btn-info btn-lg" id="menuItem" onclick="openMenu('todo')">TO DO</button>
-        <button class="btn btn-info btn-lg" id="menuItem" onclick="openMenu('log')">LOG</button>
+        <!--<button class="btn btn-info btn-lg" id="menuItem" onclick="openMenu(1)">TO DO</button>-->
+        <!--<button class="btn btn-info btn-lg" id="menuItem" onclick="openMenu(2)">LOG</button>-->
       </div>
-   <!--   <h1 style="color:yellow">   <marquee>david is gay</marquee></h1> -->
-   
-    <div class="sticky" id="todo">
-      <!--  <div class="stickyItem">-->
-      <!--    <div class="stickyTitle">min</div>-->
-      <!--    <div class="stickyBody">awesome</div>-->
-    <!--        <input type="checkbox" class="box" name="done" value="bool">done<br> -->
-      <!--</div>-->
-      </div>
-      
-      <!--<div id="log" class="sticky" style="display">-->
-      <!--  <div class="stickyItem">-->
-      <!--    <div class="stickyTitle">min</div>-->
-      <!--    <div class="stickyBody">awesome</div>-->
-      <!--      <input type="checkbox" class="box" name="done" value="bool">done<br>-->
-      <!--</div>-->
-      <!--</div>-->
-      
+      <div class="sticky" id="todo"></div>
+      <div class="sticky" id="log" style="display:none"></div>
     </div>
+    
+  <!-- STICKY NOTES MODAL -->
+
+    <div class="stickyModal hidden" id="current_sticky">     
+      <div class="stickyChat">
+        <input type="text" id="input" placeholder="Type message..." />
+      </div>
+    </div>  
     
     <script src="/socket.io/socket.io.js"></script>
     <script src="/js/jquery.min.js"></script>

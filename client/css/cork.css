@@ -1,18 +1,33 @@
 body
 {
-    background-image: url("/img/woodpaper.jpg");
+/*    background-image: url("/img/woodpaper.jpg"); */ 
     background-size: contain;
+}
+h1 {
+    height: 10vh;
+}
+.header {
+ /*   background-color: black; */
+    color: white;
+    border-bottom: 2px solid;
+    border-bottom-color: grey
 }
 *
 {
     box-sizing: border-box;
-    font-family: monospace, sans-serif;
+    font-family: monospace, lucida;
 }
 
-.title
+#newStickyBtn {
+    position: absolute;
+    z-index: 3;
+}
+
+.Title
 {
     text-align: center;
-    color: white;
+    font-weight: bold;
+    background-color: black;
 }
 
 .modal
@@ -58,7 +73,7 @@ body
     min-width: 600px;
     height: 80vh;
     min-height: 900px;
-    background-image: url("/img/chalkboard.jpg");
+ /*   background-image: url("/img/chalkboard.jpg"); */
     background-size: contain;
 }
 
@@ -80,10 +95,8 @@ body
     justify-content: center;
     text-align: center;
     margin: auto;
- /*   color: brown; */
     width: 40%;
     height: 80%;
- /*   background-color: lightgreen; */
     font-weight: bold;
     font-size: 2em;
 }
@@ -117,16 +130,20 @@ body
     margin-right: auto;
     margin-bottom: 1em;
     padding: 2px;
-    background-color: #ffff80;
+    background-color: #FFFF80;
     text-align: center;
-    box-shadow: 5px 5px 5px black;
+    box-shadow: 2px 2px 2px black;
 }
 
 .stickyTitle
 {
     width: 100%;
     height: 10%;
+    margin-top: 5%;
+    margin-left: auto;
+    margin-right: auto;
     font-size: 1.5em;
+    padding: 2px;
     font-weight: bold;
     text-align: center;
 }
@@ -134,54 +151,135 @@ body
 .stickyBody
 {
     width: 100%;
-    height: 60%;
-    text-align: left;
+    height: 75%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
     padding-top: 0.5em;
-    padding-left: 1em;
-    font-size: 1.2em;
+    font-size: 1em;
     overflow: auto;
 }
 
 .stickyModal {
-    margin-top: 10px;
-    background-color: yellow;
-    color: black;
-    border: 5px solid orange;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    top: 20%;
+    bottom: 10%;
+    left: 5%;
+    right: 5%;
+    width: 90vw;
+    min-width: 600px;
+    height: 75vh;
+    min-height: 300px;
+    position: fixed;
+    z-index: 3;
+    background-image: url("../img/cork.jpg");
+    background-size: contain;
+    border: 3px solid orange;
     border-radius: 12px;
 }
 
-.stickyTitle {
+.stickyDeetsTitle {
+    margin: auto;
+    width: 90%;
+    height: 10%;
+    display: inline-block;
+    font-size: 2.5em;
+    font-weight: bold;
 	text-align: center;
+	padding-top: 13px;
+	border-radius: 12px;
+	color: brown;
+	text-shadow: 2px 2px 2px black;
 }
 
-.stickyDeets {
-	width: 47%;
+.stickyDeetsBody {
+	width: 45%;
+	height: 70%;
+	padding: 2%;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
 	display: inline-block;
-	float: left;
-	text-align: left;
+	border: 2px solid orange;
+	border-radius: 12px;
+	font-size: 14px;
+	font-weight: bold;
+	color: white;
+	background-color: rgba(0, 0, 0, 0.3);
 }
 
 .stickyChat {
-    height: 100%;
-	width: 47%;
+    height: 70%;
+	width: 45%;
+	padding: 2%;
+	margin-left: auto;
+	margin-right: auto;
 	display: inline-block;
-	float: right;
 	border: 2px solid orange;
 	border-radius: 12px;
+	font-size: 14px;
+	font-weight: bold;
+	color: white;
+	background-color: rgba(0, 0, 0, 0.3);
+	overflow: auto;
 }
 
 .open_ticket{
     float: right;
 }
 
-.box
+.doneBox
 {
-    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding-top: 2%;
+    width: 45%;
     height: 10%;
-    visibility: visible;
+    margin-left: auto;
+    margin-right: auto;
+    float: left;
+    font-size: 1.5em;
+    font-weight: bold;
+	border: 2px solid orange;
+	border-radius: 12px;
+	color: white;
+	background-color: rgba(0, 0, 0, 0.3);
 }
 
-#newStickyBtn {
-    position: absolute;
-    z-index: 3;
+#input
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 45%;
+    height: 10%;
+    float: right;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 1.5em;
+	border: 2px solid orange;
+	border-radius: 12px;
+	color: white;
+	background-color: rgba(0, 0, 0, 0.3);
+}
+
+
+#stickyExit {
+    display: inline-block;
+    float: right;
+    margin-right: 1%;
+    margin-top: 1%;
+    z-index: 6;
+    background-image: url("../img/X_mark.jpg");
+    background-size: cover;
+    background-color: rgba(0, 0, 0, 0);
+    height: 5%;
+    width: 2%;
+}
+
+.expandBtn {
+    z-index: 5;
 }
