@@ -3,6 +3,8 @@
 //
 // A simple chat server using Socket.IO, Express, and Async.
 //
+console.log("server.js loaded?");
+
 var http = require('http');
 var path = require('path');
 
@@ -10,8 +12,22 @@ var async = require('async');
 var socketio = require('socket.io');
 var express = require('express');
 var Rapid = require('rapid-io');
+const client = Rapid.createClient('NDA1OWE0MWo1b3AzYXBmLnJhcGlkLmlv');
 
 
+function  sticky_create() {
+  console.log('shit not broken');
+    client
+        .collection('notes')
+        .newDocument()
+        .mutate({
+            title: 'body',
+            status: false,
+            body: 'content'
+        })
+}
+
+sticky_create();
 //
 // ## SimpleServer `SimpleServer(obj)`
 //

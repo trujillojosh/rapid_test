@@ -1,12 +1,10 @@
 body
 {
-    background-image: url("../img/background.jpg");
+    background-image: url("/img/woodpaper.jpg");
     background-size: contain;
 }
 *
 {
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
     box-sizing: border-box;
     font-family: monospace, sans-serif;
 }
@@ -19,59 +17,23 @@ body
 
 .modal
 {
-  position: fixed;
-/*  text-align: center; */
-  z-index: 3; /* Sit on top */
-  left: 50%;
-  top: 50%;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0,0,0,0.4);
+    top: 68%;
+    height: 30vh;
+    position: fixed;
+    z-index: 3; /* Sit on top */
+    background-color: rgba(0,0,0,0.4);
 }
 
 .modal-content
 {
-  padding: 70px 0;
-  text-align: center;
-  max-width: 660px;
-  font-family: 'indie flower';
-  font-size: 1.5em;
-  color: #e3e3e3;  
-  background: #3c5d4b;
-  border: 5px solid #0c331e;
-    
-}
-
-#newSticky
-{
-
-/*  position: fixed;*/
-/*  text-align: center;*/
-  z-index: 3; /* Sit on top */
-/*  left: 0;*/
-/*  top: 0;*/
-  /*width: 20%;*/
-  /*height: 20%;*/
-/*  background-color: rgba(0,0,0,0.4);*/
-/*  margin: 130px auto;*/
-  /*padding: 20px;*/
-/*   position: relative; */
-  /*max-width: 440px;*/
-/*  font-family: 'indie flower';*/
-/*  font-size: 1.5em;*/
-/*  color: #e3e3e3;  */
-/*  background: #3c5d4b;*/
-/*  border: 5px solid #0c331e;*/
-    
-    
-/*    position: absolute;*/
-/*    left: 25%;*/
-/*    top: 25%;*/
-/*    right: 25%;*/
-/*    margin-left: -150px;
-    margin-top: -150px;*/
-/*    text-align: center;*/
-/*    width: 85%;*/
+    padding: auto;
+    text-align: center;
+    max-width: 660px;
+    font-family: 'indie flower';
+    font-size: 1.5em;
+    color: #e3e3e3;  
+    background: #3c5d4b;
+    border: 5px solid #0c331e;
 }
 
 .textTitle
@@ -82,91 +44,144 @@ body
 .textBody
 {
     width: 80%;
-    height: 100%;
+    height: 10vh;
 }
 
 #corkboard
 {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+    align-items: center;
     margin: auto;
-    width: 95%;
-    height: 100%; /*800px;*/
-    background-color: green;
-    border: 1.5vw solid brown;
     padding: 1%;
-    -webkit-justify-content: center;
-	justify-content: center;
+    width: 95%;
+    min-width: 600px;
+    height: 80vh;
+    min-height: 900px;
+    background-image: url("/img/chalkboard.jpg");
+    background-size: contain;
 }
 
-.flex-container
+.menu
 {
-    padding: 0;
-    margin: 0;
-    list-style: none;
-    /*-ms-box-orient: horizontal;
-    display: -webkit-box;
-    display: -moz-box;
-    display: -ms-flexbox;
-    display: -moz-flex;
-    display: -webkit-flex;*/
     display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 95%;
+    height: 10%;
 }
 
-.corkboard-menu
+
+#menuItem
 {
     display: flex;
-    width: 100%;
-    -webkit-flex-wrap: nowrap;
-    flex-wrap: nowrap;
+    flex-direction: column;
+    justify-content: center;
     text-align: center;
-    -webkit-justify-content: center;
-	justify-content: center;
-}
-
-.corkboard-item
-{
-    background: magenta;
-    padding: 5px;
-    width: 100px;
-    height: 100px;
-    margin: 10px;
-    line-height: 100px;
-    color: white;
+    margin: auto;
+ /*   color: brown; */
+    width: 40%;
+    height: 80%;
+ /*   background-color: lightgreen; */
     font-weight: bold;
     font-size: 2em;
-    text-align: center;
 }
 
-.check
+#todo
 {
-    /*visibility: hidden;*/
+}
+
+#log
+{
 }
 
 .sticky
 {
+    overflow: scroll;
+    overflow-x: hidden;
+    border-collapse: separate;
     display: flex;
-    width: 100%;
-    -webkit-flex-wrap: nowrap;
-    flex-wrap: nowrap;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 95%;
+    height: 85%;
+    margin: 1vw;
+}
+
+.stickyItem
+{
+    width: 30%;
+    height: 30%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 1em;
+    padding: 2px;
+    background-color: #ffff80;
     text-align: center;
-    -webkit-justify-content: center;
-	justify-content: center;
+    box-shadow: 5px 5px 5px black;
 }
 
 .stickyTitle
 {
-    font-size: 1em;
+    width: 100%;
+    height: 10%;
+    font-size: 1.5em;
+    font-weight: bold;
     text-align: center;
 }
 
 .stickyBody
 {
-    padding-top: 1em;
+    width: 100%;
+    height: 60%;
+    text-align: left;
+    padding-top: 0.5em;
+    padding-left: 1em;
+    font-size: 1.2em;
     overflow: auto;
 }
 
+.stickyModal {
+    margin-top: 10px;
+    background-color: yellow;
+    color: black;
+    border: 5px solid orange;
+    border-radius: 12px;
+}
+
+.stickyTitle {
+	text-align: center;
+}
+
+.stickyDeets {
+	width: 47%;
+	display: inline-block;
+	float: left;
+	text-align: left;
+}
+
+.stickyChat {
+    height: 100%;
+	width: 47%;
+	display: inline-block;
+	float: right;
+	border: 2px solid orange;
+	border-radius: 12px;
+}
+
 .open_ticket{
-  /*  padding-right: 30%; */
     float: right;
+}
+
+.box
+{
+    width: 100%;
+    height: 10%;
+    visibility: visible;
+}
+
+#newStickyBtn {
+    position: absolute;
+    z-index: 3;
 }
